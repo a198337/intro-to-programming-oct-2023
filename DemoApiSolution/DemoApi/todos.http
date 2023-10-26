@@ -11,4 +11,4 @@ GET http://localhost:5086/todo-list
 
 ### 
 
-GET http://localhost:5086/todo-list/"8968985b-6c85-426d-bff0-6a42b520620e"
+GET http://localhost:5086/todo-list/8968985b-6c85-426d-bff0-6a42b520620e
