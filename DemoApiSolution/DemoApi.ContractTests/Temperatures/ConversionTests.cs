@@ -1,5 +1,5 @@
-﻿
-using Alba;
+﻿using Alba;
+
 
 namespace DemoApi.ContractTests.Temperatures;
 public class ConversionTests
@@ -48,7 +48,6 @@ public class ConversionTests
         Assert.NotNull(message);
 
         Assert.Equal(expectedReponse, message);
-
 
     }
 }
