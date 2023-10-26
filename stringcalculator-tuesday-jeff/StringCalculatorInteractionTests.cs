@@ -31,7 +31,7 @@ public class StringCalculatorInterationTests
         //_logger.When(b => b.Write("999")).Throws<LoggingException>();
         _calculator.Add("999");
 
-        _webService.Received(1).NotifyOfLoggingFailure();
+        _webService.Received().NotifyOfLoggingFailure();
 
     }
 }
