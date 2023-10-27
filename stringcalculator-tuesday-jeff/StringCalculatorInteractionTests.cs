@@ -15,11 +15,13 @@ public class StringCalculatorInterationTests
     [Theory]
     [InlineData("1")]
     [InlineData("2")]
+    [InlineData("1,3")]
     public void WritesToLogger(string numbers)
     {
-        _calculator.Add(numbers);
+        var result = _calculator.Add(numbers);
 
-        _logger.Received().Write(numbers);
+        _logger.Received().Write(result.ToString());
+        _webService.DidNotReceive().NotifyOfLoggingFailure();
 
     }
 
@@ -31,7 +33,7 @@ public class StringCalculatorInterationTests
         //_logger.When(b => b.Write("999")).Throws<LoggingException>();
         _calculator.Add("999");
 
-        _webService.Received().NotifyOfLoggingFailure();
+        _webService.Received(1).NotifyOfLoggingFailure();
 
     }
 }
